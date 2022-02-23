@@ -122,7 +122,7 @@
     --basics-column-gap: 5em;
 
     /* Skill rating bar height */
-    --skill-rating-height: 1em;
+    --skill-rating-height: .5em;
 
     /* Body padding for sm */
     --body-padding-sm: 2em;
@@ -263,9 +263,24 @@ header {
     position: relative;
     font-size: var(--big-font-size);
     color: var(--article-title-color);
-    font-weight: var(--font-700);
+    font-weight: var(--font-600);
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--article-title-color);
+    bottom: -.2rem;
+    left: 0;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
 }
 
 .container {
@@ -415,7 +430,7 @@ header {
 .skill-rating>div {
     height: 100%;
     border-radius: var(--skill-rating-border-radius);
-    background-color: var(--skill-rating-progress-background-color);
+    background-color: var(--first-color-second);
 }
 
 /*======================================== HOME ========================================*/
@@ -631,7 +646,7 @@ header {
     :root {
         --biggest-font-size: 4.5rem;
         --bigger-font-size: 3rem;
-        --big-font-size: 2.7rem;
+        --big-font-size: 2.3rem;
         --home-title-font-size: 3rem;
         --h1-font-size: 1.85rem;
         --h2-font-size: 1.5rem;
@@ -658,6 +673,16 @@ header {
     }
 } */
 
+.publications .article-container,
+.references .article-container,
+.certifications .article-container,
+.skills .article-container,
+.awards .article-container,
+.interests .article-container,
+.languages .article-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 /*~~~~~~~~~~~~~ > TABLETS + DESKTOP & PRINT ~~~~~~~~~~~~~*/
 @media print, screen and (min-width: 768px) {
     .article__date {
@@ -676,7 +701,8 @@ header {
         text-align: center;
         font-size: var(--small-font-size);
         border-radius: 0.3em;
-        border: 1px solid gray;
+        color: white;
+        background-color: var(--first-color-lighter-dark);
         margin: 0.5em;
         padding: 0.5em;
     }
@@ -692,10 +718,10 @@ header {
     }
 
     .article-content,
-    .a-ml,
+    /* .a-ml, */
     .r-ml,
-    .i-c,
-    .l-c,
+    /* .i-c, */
+    /* .l-c, */
     .m-l {
         /* 100px (.article__date) + 2rem (column-gap of .article-wrapper) */
         margin-left: calc(100px + 2rem);

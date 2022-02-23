@@ -3,7 +3,7 @@
 		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
 
-	<div class="article-container grid m-l">
+	<div class="article-container grid">
 		<% it.resume?.certifications.forEach(function(certificate) { %>
 			<article class="with-header-date c-h grid">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.certificate, showDelete: true, id: certificate.id}) %>
