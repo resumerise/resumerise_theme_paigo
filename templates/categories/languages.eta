@@ -1,10 +1,9 @@
-<section id="languages" class="languages">
+<section class="languages container section" id="languages">
 	<% if(it.resume.settings?.labels?.categoryProperty?.language?.categoryTitle) { %>
-		<header>
-			<%= it.resume.settings.labels.categoryProperty.language.categoryTitle %>
-		</header>
+		<header><%= it.resume.settings.labels.categoryProperty.language.categoryTitle %></header>
 	<% } %>
-	<div class="article-container three-column">
+
+	<div class="article-container grid l-c">
 		<% it.resume?.languages.forEach(function(language) { %>
 			<article>
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.language, showDelete: true, id: language.id}) %>
@@ -15,6 +14,7 @@
 						classes: 'article__title'
 					}) %>
 				</div>
+
 				<div class="article-content">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 

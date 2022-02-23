@@ -1,10 +1,10 @@
-<section id="profiles" class="profiles">
+<section class="profiles container section" id="profiles">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
         <header class="section__title section--hide-toc">
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
         </header>
     <% } %>
-    <div class="article-container default">
+    <div class="article-container">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
             <article>
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>

@@ -1,33 +1,33 @@
-<section id="skills" class="skills">
+<section class="skills container section" id="skills">
 	<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
-		<header>
-			<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
-		</header>
+		<header><%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %></header>
 	<% } %>
-	<div class="article-container two-column">
+
+	<div class="article-container grid">
 		<% Object.entries(it.resume?.skills.reduce(function (r, a) { r[a.category] = r[a.category] || []; r[a.category].push(a); return r; }, Object.create(null))).forEach(([category, data]) => { %>
 			<article>
-			<%~ include('key-value-item', {
-				value: category,
-				classes: 'article__title'
-			}) %>
-			<div class="skill-items">
-				<% data.forEach(function(skill) { %>
-					<div class="skill-item avoid-break-inside-column">
-						<%~ include('key-value-item', {
-							value: skill.name,
-							classes: 'article__text'
-						}) %>
-						<%~ include('skill-rating', {
-							percentage: Math.ceil(100/5 * skill.level)
-						}) %>
-						<%~ include('list', {
-							data: skill.keywords,
-							classes: 'article__list'
-						}) %>
-					</div>
-				<% }) %>
-			</div>
+				<%~ include('key-value-item', {
+					value: category,
+					classes: 'article__title s-at'
+				}) %>
+
+				<div class="article-content grid s-c">
+					<% data.forEach(function(skill) { %>
+						<div class="skills__progress grid">
+							<%~ include('key-value-item', {
+								value: skill.name,
+								classes: 'article__skills-title'
+							}) %>
+							<%~ include('skill-rating', {
+								percentage: Math.ceil(100/5 * skill.level)
+							}) %>
+							<%~ include('list', {
+								data: skill.keywords,
+								classes: 'article__list'
+							}) %>
+						</div>
+					<% }) %>
+				</div>
 			</article>
 		<% }) %>
 	</div>

@@ -1,17 +1,17 @@
-<section id="project" class="project">
+<section class="project container section" id="project">
 	<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
 		<header><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></header>
 	<% } %>
-	<div class="article-container default">
+
+	<div class="article-container grid">
 		<% it.resume?.projects.forEach(function(project) { %>
-			<article class="with-header-date-logo">
+			<article class="with-header-date-logo grid">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
 				<div class="article__date">
 					<%~ include('date-range', {
 						startDate: project.startDate,
 						endDate: project.endDate,
 						present: project.present,
-						classes: 'date'
 					}) %>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.durationLabel, 
@@ -19,33 +19,40 @@
 						classes: 'article__text duration'
 					}) %>
 				</div>
+				
 				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
-						value: project.title,
-						classes: 'article__title'
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
-						value: project.client,
-						classes: 'article__subtitle'
-					}) %>
-					<%~ include('key-url-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
-						value: project.website,
-						classes: 'article__url'
-					}) %>
-				</div>
-				<% if (project.logo) { %>
-					<div class="article-logo">
-						<img src="<%~ project.logo %>">
+					<div>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
+							value: project.title,
+							classes: 'article__title'
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
+							value: project.client,
+							classes: 'article__subtitle'
+						}) %>
+						<%~ include('key-url-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
+							value: project.website,
+							classes: 'article__url'
+						}) %>
 					</div>
-				<% } %>
-				<div class="article-content">
+
+					<div>
+						<% if (project.logo) { %>
+							<div class="article__img">
+								<img src="<%~ project.logo %>">
+							</div>
+						<% } %>
+					</div>
+				</div>
+
+				<div class="article-content grid">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
 						value: project.summary,
-						classes: 'article__text'
+						classes: 'article__description'
 					}) %>
 					<%~ include('list', {
 						label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
@@ -67,14 +74,14 @@
 					}) %>
 					<% if (project.otherUrls) { %>
 						<div class="article__list other-urls">
-							<label>
+							<label class="list__label">
 								<%= it.resume.settings?.labels?.otherUrls %>
 							</label>
 							<ul>
 								<% project.otherUrls.forEach(function(link){ %>
 									<li>
 										<div><%= link.label %></div>
-										<div><a href="<%= link.url %>"><%= link.url %></a></div>
+										<div><a class="article__url" href="<%= link.url %>"><%= link.url %></a></div>
 									</li>
 								<% }) %>
 							</ul>
