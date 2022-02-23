@@ -3,7 +3,7 @@
 		<header><%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %></header>
 	<% } %>
 
-    <div class="article-container grid">
+    <div class="article-container grid m-l">
         <% it.resume?.publications.forEach(function(publication) { %>
             <article class="with-header-date grid">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
@@ -31,7 +31,7 @@
                     }) %>
                 </div>
 
-                <div class="article-content">
+                <div class="article-content no-m">
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
                         value: publication.summary,

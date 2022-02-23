@@ -5,7 +5,7 @@
 
 	<div class="article-container grid">
 		<% it.resume?.awards.forEach(function(award) { %>
-			<article class="with-header-date grid">
+			<article class="with-header-date grid a-ml">
 				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
@@ -31,7 +31,7 @@
 					}) %>
 				</div>
 
-				<div class="article-content">
+				<div class="article-content no-m">
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
 					value: award.summary,

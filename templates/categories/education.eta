@@ -6,52 +6,54 @@
 	<div class="article-container grid">
 		<% it.resume?.education.forEach(function(education) { %>
 			<article class="with-header-date grid">
-				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.education, showDelete: true, id: education.id}) %>
-				<div class="article__date">
-					<%~ include('date-range', {
-						startDate: education.startDate,
-						endDate: education.endDate,
-						present: education.present,
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.durationLabel, 
-						value: education.durationLabel,
-						classes: 'article__text duration'
-					}) %>
+				<div class="article-wrapper">
+					<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.education, showDelete: true, id: education.id}) %>
+					<div class="article__date">
+						<%~ include('date-range', {
+							startDate: education.startDate,
+							endDate: education.endDate,
+							present: education.present,
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.durationLabel, 
+							value: education.durationLabel,
+							classes: 'article__text duration'
+						}) %>
+					</div>
+
+					<div class="article-header">
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
+							value: education.institution,
+							classes: 'article__title'
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
+							value: education.area,
+							classes: 'article__subtitle'
+						}) %>
+					</div>
 				</div>
 
-				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
-						value: education.institution,
-						classes: 'article__title'
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
-						value: education.area,
-						classes: 'article__subtitle'
-					}) %>
-				</div>
-
-				<div class="article-content">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
-						value: education.studyType,
-						classes: 'article__position'
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
-						value: education.gpa,
-						showLabel: true,
-						classes: 'article__gpa'
-					}) %>
-					<%~ include('list', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
-						data: education.courses,
-						showLabel: true,
-						classes: 'article__list'
-					}) %>
-				</div>
+					<div class="article-content">
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
+							value: education.studyType,
+							classes: 'article__position'
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
+							value: education.gpa,
+							showLabel: true,
+							classes: 'article__gpa'
+						}) %>
+						<%~ include('list', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
+							data: education.courses,
+							showLabel: true,
+							classes: 'article__list'
+						}) %>
+					</div>
 			</article>
 		<% }) %>
 		<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.education}) %>

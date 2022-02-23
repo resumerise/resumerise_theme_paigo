@@ -641,9 +641,9 @@ header {
         --smaller-font-size: .813rem;
     }
 
-    body {
+    /* body {
         padding: var(--body-padding-md) calc(var(--body-padding-md) * 1.2);
-    }
+    } */
 
     .container {
         margin-left: auto;
@@ -660,6 +660,11 @@ header {
 
 /*~~~~~~~~~~~~~ > TABLETS + DESKTOP & PRINT ~~~~~~~~~~~~~*/
 @media print, screen and (min-width: 768px) {
+    .article__date {
+        width: 100px;
+        font-size: var(--smaller-font-size);
+    }
+
     .article__date .date {
         flex-direction: column;
     }
@@ -676,7 +681,37 @@ header {
         padding: 0.5em;
     }
 
-    /* article.with-header-date-logo {
+    .article-wrapper {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 2rem;
+    }
+
+    .article-header {
+        width: 80%;
+    }
+
+    .article-content,
+    .a-ml,
+    .r-ml,
+    .i-c,
+    .l-c,
+    .m-l {
+        /* 100px (.article__date) + 2rem (column-gap of .article-wrapper) */
+        margin-left: calc(100px + 2rem);
+    }
+
+    .no-m {
+        margin-left: 0;
+    }
+
+    /* 
+    .with-header-date {
+        grid-template-columns: auto;
+    } */
+
+    /* 
+    article.with-header-date-logo {
         display: grid;
         align-items: flex-start;
         grid-template-areas:
@@ -741,10 +776,9 @@ header {
         gap: var(--date-gap);
     } */
 
-
-    .article-content {
+    /* .article-content {
         grid-area: content;
-    }
+    } */
 }
 
 /*~~~~~~~~~~~~~ print ~~~~~~~~~~~~~*/

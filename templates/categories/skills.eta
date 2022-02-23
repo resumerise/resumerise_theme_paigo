@@ -3,7 +3,7 @@
 		<header><%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %></header>
 	<% } %>
 
-	<div class="article-container grid">
+	<div class="article-container grid m-l">
 		<% Object.entries(it.resume?.skills.reduce(function (r, a) { r[a.category] = r[a.category] || []; r[a.category].push(a); return r; }, Object.create(null))).forEach(([category, data]) => { %>
 			<article>
 				<%~ include('key-value-item', {
@@ -11,7 +11,7 @@
 					classes: 'article__title s-at'
 				}) %>
 
-				<div class="article-content grid s-c">
+				<div class="article-content grid s-c no-m">
 					<% data.forEach(function(skill) { %>
 						<div class="skills__progress grid">
 							<%~ include('key-value-item', {

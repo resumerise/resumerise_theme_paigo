@@ -15,7 +15,7 @@
 					}) %>
 				</div>
 
-				<div class="article-content">
+				<div class="article-content no-m">
 					<%~ include('list', {
 						label: it.resume.settings?.labels?.categoryProperty?.interest?.keywords, 
 						data: interest.keywords,

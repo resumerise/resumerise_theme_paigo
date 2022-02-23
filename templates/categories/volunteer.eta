@@ -6,36 +6,38 @@
 	<div class="article-container grid">
 		<% it.resume?.volunteer.forEach(function(volunteer) { %>
 			<article class="with-header-date grid">
-				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
-				<div class="article__date">
-					<%~ include('date-range', {
-						startDate: volunteer.startDate,
-						endDate: volunteer.endDate,
-						present: volunteer.present,
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.durationLabel, 
-						value: volunteer.durationLabel,
-						classes: 'article__text duration'
-					}) %>
-				</div>
+				<div class="article-wrapper">
+					<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
+					<div class="article__date">
+						<%~ include('date-range', {
+							startDate: volunteer.startDate,
+							endDate: volunteer.endDate,
+							present: volunteer.present,
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.durationLabel, 
+							value: volunteer.durationLabel,
+							classes: 'article__text duration'
+						}) %>
+					</div>
 
-				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
-						value: volunteer.organization,
-						classes: 'article__title'
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
-						value: volunteer.position,
-						classes: 'article__subtitle'
-					}) %>
-					<%~ include('key-url-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
-						value: volunteer.website,
-						classes: 'article__url'
-					}) %>
+					<div class="article-header">
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
+							value: volunteer.organization,
+							classes: 'article__title'
+						}) %>
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
+							value: volunteer.position,
+							classes: 'article__subtitle'
+						}) %>
+						<%~ include('key-url-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
+							value: volunteer.website,
+							classes: 'article__url'
+						}) %>
+					</div>
 				</div>
 
 				<div class="article-content">

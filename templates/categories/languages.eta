@@ -15,7 +15,7 @@
 					}) %>
 				</div>
 
-				<div class="article-content">
+				<div class="article-content no-m">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
 						value: language.fluency,
