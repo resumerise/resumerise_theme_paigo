@@ -1,0 +1,44 @@
+<section id="awards" class="awards">
+	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
+		<header>
+			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
+		</header>
+	<% } %>
+	<div class="article-container default">
+		<% it.resume?.awards.forEach(function(award) { %>
+			<article class="with-header-date">
+				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
+					value: award.date,
+					classes: 'article__date'
+				}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
+						value: award.title,
+						classes: 'article__title'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+						value: award.awarder,
+						classes: 'article__subtitle'
+					}) %>
+					<%~ include('key-url-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.website, 
+						value: award.website,
+						classes: 'article__url'
+					}) %>
+				</div>
+				<div class="article-content">
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+					value: award.summary,
+					classes: 'article__text'
+				}) %>
+				</div>
+			</article>
+		<% }) %>
+		<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
+	</div>
+</section>

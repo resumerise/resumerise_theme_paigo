@@ -1,0 +1,3 @@
+<div class="skill-rating">
+	<div style="width: <%= it.percentage %>%"></div>
+</div>

@@ -1,0 +1,61 @@
+<section id="work" class="work">
+    <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
+        <header><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></header>
+    <% } %>
+    <div class="article-container default">
+        <% it.resume?.work.forEach(function(work) { %>
+            <article class="with-header-date-logo">
+                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
+                <div class="article__date">
+                    <%~ include('date-range', {
+                        startDate: work.startDate,
+                        endDate: work.endDate,
+                        present: work.present,
+                        classes: 'date'
+                    }) %>
+                    <%~ include('key-value-item', {
+                        label: it.resume.settings?.labels?.durationLabel, 
+                        value: work.durationLabel,
+                        classes: 'article__text duration'
+                    }) %>
+                </div>
+                <div class="article-header">
+                    <%~ include('key-value-item', {
+                        label: it.resume.settings?.labels?.categoryProperty?.work?.company, 
+                        value: work.company,
+                        classes: 'article__title'
+                    }) %>
+                    <%~ include('key-value-item', {
+                        label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
+                        value: work.position,
+                        classes: 'article__subtitle'
+                    }) %>
+                    <%~ include('key-url-item', {
+                        label: it.resume.settings?.labels?.categoryProperty?.work?.website, 
+                        value: work.website,
+                        classes: 'article__url'
+                    }) %>
+                </div>
+                <% if (work.logo) { %>
+                    <div class="article-logo">
+                        <img src="<%~ work.logo %>">
+                    </div>
+                <% } %>
+                <div class="article-content">
+                    <%~ include('key-value-item', {
+                        label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
+                        value: work.summary,
+                        classes: 'article__text'
+                    }) %>
+                    <%~ include('list', {
+                        label: it.resume.settings?.labels?.categoryProperty?.work?.highlights, 
+                        data: work.highlights,
+                        showLabel: true,
+                        classes: 'article__list'
+                    }) %>
+                </div>
+            </article>
+        <% }) %>
+        <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+    </div>
+</section>

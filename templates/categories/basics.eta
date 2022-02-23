@@ -1,0 +1,43 @@
+<section id='basics' class="basics">
+    <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+        <header class="section__title section--hide-toc"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></header>
+    <% } %>
+    <div class="article-container default">
+        <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.basics}) %>
+        <div class="left">
+            <%~ include('profile-picture', {
+                picture: it.resume.basics.picture
+            }) %>
+        </div>
+        <div class="right">
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
+                value: it.resume.basics.name,
+                classes: 'article__text'
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
+                value: it.resume.basics.label,
+                classes: 'article__text'
+            }) %>
+            <%~ include('key-url-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
+                value: it.resume.basics.website,
+                classes: 'article__url',
+                iconClass: 'fas fa-link'
+            }) %>
+            <%~ include('key-mail-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
+                value: it.resume.basics.email,
+                classes: 'article__mail',
+                iconClass: 'far fa-envelope'
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
+                value: it.resume.basics.phone,
+                classes: 'article__phone',
+                iconClass: 'fas fa-phone'
+            }) %>
+        </div>
+    </div>
+</section>

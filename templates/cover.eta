@@ -1,0 +1,52 @@
+<div class="cover-page">
+    <div class="cover-page__header">
+        <%~ include('profile-picture', {
+            picture: it.resume.basics.picture
+        }) %>
+        
+        <h1><%= it.resume.basics.name %></h1>
+        <h3><%= it.resume.basics.label %></h3>
+        <p class="summary"><%= it.resume.basics.summary %></p>
+    </div>
+    <div class="cover-page__contact">
+        <%~ include('key-url-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
+            value: it.resume.basics.website,
+            classes: 'article__url',
+            iconClass: 'fas fa-link'
+        }) %>
+        <%~ include('key-mail-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
+            value: it.resume.basics.email,
+            classes: 'article__mail',
+            iconClass: 'far fa-envelope'
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
+            value: it.resume.basics.phone,
+            classes: 'article__phone',
+            iconClass: 'fas fa-phone'
+        }) %>
+    </div>
+    <% if (it.resume.skills?.length) { %>
+        <div class="article__list main-skills">
+            <label class="list__label">
+                <%= it.resume.settings?.labels?.mainSkills %>
+            </label>
+            <ul>
+                <% it.resume.skills.filter(skill => !!skill.main).forEach(function(skill){ %>
+                    <li><%= skill.name %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+    <div class="cover-page__social">
+        <% it.resume.basics.profiles?.forEach(function(profile){ %>
+            <%~ include('profile-item', {
+                label: profile.network,
+                url: profile.url,
+                classes: 'fab'
+            }) %>
+        <% }) %>
+    </div>
+</div>
