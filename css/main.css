@@ -354,8 +354,9 @@ header::after {
 .article__list .list__label {
     display: block;
     color: var(--text-label-color);
-    font-size: var(--h3-font-size);
+    font-size: var(--normal-font-size);
     font-weight: var(--font-500);
+    margin-top: .5rem;
 }
 
 .article__list ul {
@@ -692,6 +693,14 @@ header::after {
 
     .article__date .date {
         flex-direction: column;
+    }
+
+    .date .startDate {
+        order: 1;
+    }
+
+    .date .endDate {
+        order: -1;
     }
 
     .article__date .duration {
