@@ -8,5 +8,5 @@ export const meta = {
   categories: ["EDUCATION"],
   styles: ["CLEAN", "MINIMAL"],
   author: "resumerise",
-  authorWebUrl: "http://resumerise.io",
+  authorWebUrl: "http://resumerise.io"
 } as ResumeriseMeta;
