@@ -1,5 +1,6 @@
 <div class="cover-page">
-    <div class="bg-color">
+    <div class="bg-color"></div>
+
         <div class="cover-page__header">
             <%~ include('profile-picture', {
                 picture: it.resume.basics.picture
@@ -30,7 +31,6 @@
                 iconClass: 'fas fa-phone'
             }) %>
         </div>
-    </div>
 
     <% if (it.resume.skills?.length) { %>
         <div class="article__list main-skills">

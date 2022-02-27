@@ -367,6 +367,39 @@ header::after {
     color: var(--url-color);
 }
 
+/*======================================== PARTICLES ========================================*/
+canvas {
+    position: absolute;
+    max-height: 1229px !important;
+    height: 576px !important;
+    top: 0;
+}
+
+#particles-js {
+    width: 100%;
+    max-height: 1229px;
+}
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
 /*======================================== CUSTOM ========================================*/
 /* AWARDS */
 .a-url {
@@ -437,6 +470,7 @@ header::after {
 /*======================================== HOME ========================================*/
 .basics {
     background-color: var(--home-section-color);
+    overflow: hidden !important;
 }
 
 .basics header {
@@ -877,7 +911,15 @@ header::after {
         font-weight: normal;
     }
 
-    .cover-page .bg-color{
+    .cover-page .bg-color {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        /* top: -6rem;
+        left: -6rem;
+        right: -6rem; */
+        -webkit-print-color-adjust: exact;
         background: var(--home-section-color);
     }
 
@@ -940,7 +982,7 @@ header::after {
 }
 
 /*======================================== INTERACTIVE ========================================*/
-.INTERACTIVE .nav-add {
+/* .INTERACTIVE .nav-add {
     margin-top: 1em;
     margin-bottom: 2em;
 }
@@ -956,4 +998,4 @@ header::after {
 
 html:not(.INTERACTIVE) .profiles article .profile-item {
     display: inline-block;
-}
+} */

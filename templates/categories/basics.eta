@@ -1,4 +1,7 @@
 <section class="basics section" id='basics'>
+    <div id="particles-js"></div> <!-- stats - count particles -->
+    <% /* <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> */ %>
+
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
         <header class="section__title section--hide-toc"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></header>
     <% } %>
