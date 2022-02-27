@@ -768,23 +768,23 @@ header::after {
 /* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* SCROLLBAR THUMB */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* SCROLLBAR THUMB */
+::-webkit-scrollbar-thumb {
     background: hsl(216, 51%, 28%);
     border-radius: 10px;
-  }
-  
-  /* SCROLLBAR TRACK */
-  ::-webkit-scrollbar-track {
+}
+
+/* SCROLLBAR TRACK */
+::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  /* SCROLLBAR THUMB : HOVER */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* SCROLLBAR THUMB : HOVER */
+::-webkit-scrollbar-thumb:hover {
     background: hsl(216, 41%, 38%);
-  }
+}
 
 /*======================================== PLATFORM ========================================*/
 /*~~~~~~~~~~~~~ screen ~~~~~~~~~~~~~*/
@@ -832,13 +832,14 @@ header::after {
 @media print, screen and (min-width: 768px) {
     canvas {
         position: absolute;
+        width: 100vw;
         max-height: 1229px !important;
         height: 576px !important;
         top: 0;
     }
 
     #particles-js {
-        width: 100%;
+        width: 100vw;
         max-height: 1229px;
     }
 
