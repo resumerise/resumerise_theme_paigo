@@ -463,11 +463,6 @@ header::after {
     font-weight: var(--font-700);
 }
 
-.home__img,
-.home__title {
-    user-select: none;
-}
-
 .home__subtitle {
     font-size: var(--h3-font-size);
 }
