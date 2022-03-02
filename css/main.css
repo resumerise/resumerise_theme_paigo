@@ -447,7 +447,7 @@ header::after {
 /*======================================== HOME ========================================*/
 .basics {
     /* background-color: var(--home-section-color); */
-    background-image: radial-gradient(circle at 20% 14%, rgba(27, 27, 27, 0.05) 0%, rgba(27, 27, 27, 0.05) 50%, rgba(126, 126, 126, 0.05) 50%, rgba(126, 126, 126, 0.05) 100%), radial-gradient(circle at 18% 51%, rgba(248, 248, 248, 0.05) 0%, rgba(248, 248, 248, 0.05) 50%, rgba(26, 26, 26, 0.05) 50%, rgba(26, 26, 26, 0.05) 100%), radial-gradient(circle at 29% 38%, rgba(160, 160, 160, 0.05) 0%, rgba(160, 160, 160, 0.05) 50%, rgba(212, 212, 212, 0.05) 50%, rgba(212, 212, 212, 0.05) 100%), linear-gradient(90deg, rgb(35, 119, 255), rgb(132, 148, 173));
+    background-image: radial-gradient(circle at 20% 14%, rgba(27, 27, 27, 0.021) 0%, rgba(27, 27, 27, 0.041) 50%, rgba(126, 126, 126, 0.05) 50%, rgba(126, 126, 126, 0.05) 100%), radial-gradient(circle at 18% 51%, rgba(248, 248, 248, 0.05) 0%, rgba(248, 248, 248, 0.05) 50%, rgba(26, 26, 26, 0.05) 50%, rgba(26, 26, 26, 0.05) 100%), radial-gradient(circle at 29% 38%, rgba(160, 160, 160, 0.05) 0%, rgba(160, 160, 160, 0.05) 50%, rgba(212, 212, 212, 0.05) 50%, rgba(212, 212, 212, 0.05) 100%), linear-gradient(90deg, rgba(35, 119, 255, 0), rgba(132, 148, 173, 0.171));
     overflow: hidden !important;
 }
 
@@ -484,7 +484,7 @@ header::after {
 .home__title,
 .home__subtitle,
 .home__container {
-    color: white;
+    color: black;
 }
 
 .home__container {
